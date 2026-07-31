@@ -17,7 +17,9 @@
 
 // the first statement after creating the file is import the test and expect function from playwright Module
 
-// Next we have to write a test case for that we using the test function in that test function has acept two paramaters one is title of the test and another one is a function wheather it could be a simple function, arrow function or annonymous function 
+// Next we have to write a test case for that we using the test function in that test function 
+// has acept two paramaters one is title of the test and another one is a function 
+// wheather it could be a simple function, arrow function or annonymous function 
 //Syntax to write test 
 // test ("titile" , () =>{
 
@@ -48,3 +50,21 @@ test("verify page title",({page})=>{
  the test fails
 **/
 // note: Whenever we do create steps inside the test all the steps will return a promise
+
+//* promise is nothing but a conformation or a gaurantee whether the task is completed or not  
+
+// Asyncronous and Synchronous
+
+// * Synchronous - It is a Step by step Execution 
+// * Asynchronous - It will executes the steps parallely it wont wait for the previous steps
+//  the main drawback of this Asynchronous is there is a Dependencies here
+//  until unless the task 1 is completed cannot proceed the task2
+
+// In Playwright 
+// test ("titile" , () =>{
+
+//     // step 1 => Task => returns promise => returns resolve,reject  
+//    // step 2 => Task => returns promise => returns resolve,reject 
+//   // step 3 => Task => returns promise => returns resolve,reject 
+
+// })

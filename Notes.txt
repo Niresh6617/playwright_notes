@@ -1,0 +1,151 @@
+Playwrite - Introduction
+
+Playwrite is a demanding tool which is trending in the market  
+What is playwrite tool?
+1. playwrite is a open source tool by Microsoft used for automating web browser testing 
+
+2. playwrite is a framwork used for automating web browser that enabling end to end testing 
+
+end - to - end means  it covers complete everything which is bowser, api, mobile application 
+
+we can say playwrite as framework but not selinium 
+because selinium is a library which is providing some 
+jar files and we can intergrate with java and we can automate 
+
+for this selinium use a framework called Test Engine 
+for autmate the java code we use selinium with Test Engine 
+
+While come to Playwrite itself is a library also it is a framwork 
+
+3. Beyond Browser automation , Playwrite provide dedicated API for testing and intergrating with other web API's
+4. Playwrite Realeased in 2020.
+5. It is Open Source NodeJs library 
+
+Library: It is a set of classes and methods  
+
+According to this Playwrite is a library aswell as framework 
+JRE: is a runtime environment of Java
+NodeJS:  is a open source, cross platform Javascript run time environment which executes JS code outside of a web browser 
+
+playwrite is build on the top of nodejs library 
+playwrite has a build in library and framwork so
+        need to choose any other framework 
+
+
+Fearures:
+Cross browser testing: works with Chromium (Chrome, Edge), FireFox, Webkit (Safari).
+Cross Platforms testing(we can create and execute in other platforms): Runs on Windows, Mac and Linux.
+Cross Language Testing: You can write tests in Javascript, Typescript, Java, Python, or .Net (C#).
+Test Mobile Web: Supports mobile testing for chrome (Android) and safari (iOS).
+Also Supports API Testing: playwrites includes build-in API Testing, allowing you to test web application and Backend API's together. (Selinium doest support API Testing)
+Automatic waiting (Auto - wait):  playwright waits for elements to be ready before performing actions, reduce test flakiness.(which is not their in selinuim)
+In Playwrite their are direct methods are available thats very easy to handle complex elements. 
+We can run test cases parallely 
+Built-In Reporters: Provides various report formats like HTML, JSON, JUnit and more. Supports third-party reporting tools like Allure.
+1. Inpector: Helps debug tests by showing click points and verifying locators in real time.
+2. Code Generation ( Code Gen ):  This tool records your actions and converts them into test scripts in any supported language.
+3. Tracing( Trace Viewer ): Captures Screenshots, records Videos, retries flaky tests, and logs steps automatically.  capture all the informations to investigate the test failure.
+        (Above are the 3 Important components Additonally          provided by Playwrite which is not thier in selinium)
+
+For choosing an language to communicate with playwrite why we go for Typescript instead of Javascript
+TypeScript
+
+TypeScript is a JavaScript with syntax for Types.
+ 
+In Javascript whenever you create a variable you no need to mention the data type of an particular variable 
+ 
+In TypeScript whenever you create a variable you must specify datatype of that particular variable 
+
+DataType: Means what type of data has to be store in a particular variable 
+
+JavaScript is a Dynamically Typed Language 
+let age = 30;
+const name = "Niresh";
+var bool = true ;
+
+TypeScript is a Statically Typed Language - We have to specify DataType
+
+let age: number =30;
+let name: string = "niresh"
+
+age= "Thirty" ; //It throws me an error 
+ 
+ Why we need to go with TypeScript
+
+JavaScript (ES3, ES4, ES5, ES6) versions 
+ES - ECMAScript
+ECMAScipt is like a Complaince which will followed by JavaScript
+or
+ECMA Script is the standard to which all javascript code must comply.
+
+note:The standardized scripting language specification that serves as the foundation of JavaScript. It defines the core syntax, types, and features (like variables, loops, and functions). Essentially, ECMAScript is the rulebook, while JavaScript is one of the many languages that implements those rules
+
+
+TypeScript - is a superset of JavaScript
+
+npm - Node Package Manager
+npx - Node Package Executor 
+
+
+
+Create a Type Script file name as mytest.spec.ts
+
+Test , Expect  - Built in Function
+
+note: Playwright is a Module so we need to import the test and expect 
+
+Test Function will be use to create a test cases 
+ Expect Function will be used for Assertion or Validation to test 
+
+the first statement after creating the file is import the test and expect function from playwright Module
+
+Next we have to write a test case for that we using the test function in that test function has acept two paramaters one is title of the test and another one is a function wheather it could be a simple function, arrow function or annonymous function 
+
+test ("titile" , () =>{
+
+// step 1
+// step 2
+// step 3
+
+})
+
+whenever we try to create a test function or method we neeed to pass a parameter to that arrow function called 
+fixture inside the curly braces 
+eg:
+test("verify page title",({page})=>{
+
+
+})
+
+Fixture - Global variable means u can accessible throughout the project 
+
+pre - defined fixtures 
+page - used for launching the URL or to do any validations on page then we reqires page Fixtures 
+browser 
+
+page.methods
+page.goto - it is used to launch the URL from the web page 
+expect - is a function is used for assertion 
+
+note: Whenever we do create steps inside the test all the steps will return a promise 
+
+
+
+
+Asyncronous and Synchronous
+
+* Synchronous - It is a Step by step Execution 
+* Asynchronous - It will executes the steps parallely it wont wait for the previous steps
+ the main drawback of this Asynchronous is there is a Dependencies here
+ until unless the task 1 is completed cannot proceed the task2
+
+In Playwright 
+test ("titile" , () =>{
+
+    // step 1 => Task => returns promise => returns resolve,reject  
+   // step 2 => Task => returns promise => returns resolve,reject 
+  // step 3 => Task => returns promise => returns resolve,reject 
+
+})
+
+* promise is nothing but a conformation or a gaurantee whether the task is completed or not  
