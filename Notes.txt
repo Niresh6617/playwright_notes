@@ -149,5 +149,8 @@ test ("titile" , () =>{
 })
 
 * promise is nothing but a conformation or a gaurantee whether the task is completed or not  
-updated
-update-2
+If any step is follows Asynchronous nature when it is returning any promise then we have to add await satatement 
+
+* In automation code every satatement in the Script return a promise 
+* Asynchronous means - every Every statement in the function returning a promise 
+* to fullfill the promise we have to await statement 

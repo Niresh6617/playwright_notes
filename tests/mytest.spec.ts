@@ -33,14 +33,14 @@ import {test,expect} from "@playwright/test"
 
 //Fixture - global variable : page, browser
 //page.goto - goto is a method of page is used to launch URL in web page  
-test("verify page title",({page})=>{
+test("verify page title",async ({page})=>{
     // 1. to run the url we go with page fixture and the method goto 
-    page.goto("https://testautomationpractice.blogspot.com/")
+    await page.goto("https://testautomationpractice.blogspot.com/")
     //steps 1 to n
     // 3. we can also console and see the title of the webpage using a method in page called title 
-    let title: string = page.title();
+    let title: string = await page.title();
     // 2. to verify the title of the web page using expect function with some methods
-    expect(page).toHaveTitle("My Shop")
+    await expect(page).toHaveTitle("My Shop")
 })
 
 /**
