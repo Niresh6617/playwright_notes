@@ -68,3 +68,12 @@ test("verify page title",async ({page})=>{
 //   // step 3 => Task => returns promise => returns resolve,reject 
 
 // })
+
+// To run the test we have to use command => npx playwright test 
+// by default the playwright will follow Headless mode of execution 
+// means all the test will executes in the background itself 
+/**
+  running 9 test using 8 workers
+  worker - represent one single browser instance  
+*/  
+// After run the test to see the report then run the command - npx playwright show-report 

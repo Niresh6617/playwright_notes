@@ -152,5 +152,6 @@ test ("titile" , () =>{
 If any step is follows Asynchronous nature when it is returning any promise then we have to add await satatement 
 
 * In automation code every satatement in the Script return a promise 
-* Asynchronous means - every Every statement in the function returning a promise 
-* to fullfill the promise we have to await statement 
+* Asynchronous means - every Every statement in the function is returning a promise 
+* to fullfill the promise we have to use await statement
+If we using await to fullfill the promise we must  
