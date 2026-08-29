@@ -82,5 +82,12 @@ test("verify page title",async ({page})=>{
   npx playwritght test filename.ts --project=browser_name => means we can run test for particular file 
   with selected browser also
   
+  2.lets say if i want run multiple test by giving 
+  npx playwright test filename-1 filename-2 ...
+
+  3. we can also test the file by giving name which we specify in the test 
+  npx playwright test -g "keyword" 
+  keyword - is the word which has to be present inside the test file 
+  note - we dont have to specify the full name we just meniton a single word also it will run
 
 */

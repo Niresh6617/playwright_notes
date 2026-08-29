@@ -12,8 +12,8 @@ we can say playwrite as framework but not selinium
 because selinium is a library which is providing some 
 jar files and we can intergrate with java and we can automate 
 
-for this selinium use a framework called Test Engine 
-for autmate the java code we use selinium with Test Engine 
+for this selinium use a framework called TestNG 
+for autmate the java code we use selinium with TestNG 
 
 While come to Playwrite itself is a library also it is a framwork 
 
