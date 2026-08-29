@@ -77,3 +77,10 @@ test("verify page title",async ({page})=>{
   worker - represent one single browser instance  
 */  
 // After run the test to see the report then run the command - npx playwright show-report 
+
+/*
+  npx playwritght test filename.ts --project=browser_name => means we can run test for particular file 
+  with selected browser also
+  
+
+*/
