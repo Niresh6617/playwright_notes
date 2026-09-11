@@ -10,7 +10,14 @@
 
 // Test , Expect  - Built in Function
 
-// note: Playwright is a Module so we need to import the test and expect 
+// note: Playwright is a Module so we need to import the test and expect function 
+/*
+   a module is a distinct, reusable block of code encapsulated in its own file. 
+   You can think of a module as a code library 
+                                    (or) 
+   a single Lego brick that performs a specific function and can be easily 
+   plugged into other parts of your application.
+*/
 
 // • Test Function will be use to create a test cases 
 // •  Expect Function will be used for Assertion or Validation to test 
