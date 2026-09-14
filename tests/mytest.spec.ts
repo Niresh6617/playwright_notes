@@ -16,7 +16,7 @@
    You can think of a module as a code library 
                                     (or) 
    a single Lego brick that performs a specific function and can be easily 
-   plugged into other parts of your application.
+  plugged into other parts of your application.
 */
 
 // • Test Function will be use to create a test cases 
@@ -24,8 +24,8 @@
 
 // the first statement after creating the file is import the test and expect function from playwright Module
 
-// Next we have to write a test case for that we using the test function in that test function 
-// has acept two paramaters one is title of the test and another one is a function 
+// Next we have to write a test case for that we using the test function  
+//  in that test function has accept two paramaters one is title of the test and another one is a function 
 // wheather it could be a simple function, arrow function or annonymous function 
 //Syntax to write test 
 // test ("titile" , () =>{
@@ -38,7 +38,7 @@
 
 import {test,expect} from "@playwright/test" 
 
-//Fixture - global variable : page, browser
+//Fixture - global variable : page, browser (We study in future about this)
 //page.goto - goto is a method of page is used to launch URL in web page  
 test("verify page title",async ({page})=>{
     // 1. to run the url we go with page fixture and the method goto 
@@ -46,16 +46,29 @@ test("verify page title",async ({page})=>{
     //steps 1 to n
     // 3. we can also console and see the title of the webpage using a method in page called title 
     let title: string = await page.title();
+    console.log("The title in webpage is ", title);
     // 2. to verify the title of the web page using expect function with some methods
-    await expect(page).toHaveTitle("My Shop")
+    // await expect(page).toHaveTitle(/Automation/) // it is used to check whether the word is presemt in the title 
+    await expect(page).toHaveTitle("Automation Testing Practice")
+
 })
 
 /**
  * expect is a function which is used for assertion 
  Assertion is a validation step in playwright it checks whether the actual result 
  is matches the epxected results if the condition is true the test passes if the condition fails
- the test fails
+ the test fails 
+ or
+ expect is a function is used to check whether the actual result is matches the expected result 
 **/
+/**
+ * from above output - the title variable will console it as "Automation Testing Practice"
+   but whereas u can see in the assertion part(expect function) we mentioned only as "Automation"
+   though title variable has "Automation" is present but the playwright will expect the full title is 
+   present or not so instead we wants to check the content or keyword is present in the  varialbe 
+   we use regular expression (/keyword/) Now Playwright checks whether the title contains/matches Automation.
+ * 
+ */
 // note: Whenever we do create steps inside the test all the steps will return a promise
 
 //* promise is nothing but a conformation or a gaurantee whether the task is completed or not  
