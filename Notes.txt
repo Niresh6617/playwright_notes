@@ -155,3 +155,7 @@ If any step is follows Asynchronous nature when it is returning any promise then
 * Asynchronous means - every Every statement in the function is returning a promise 
 * to fullfill the promise we have to use await statement
 If we using await to fullfill the promise we must  
+
+
+Playwright Architecture - 
+playwright works using Web Socket Protocol 

@@ -105,9 +105,18 @@ test("verify page title",async ({page})=>{
   2.lets say if i want run multiple test by giving 
   npx playwright test filename-1 filename-2 ...
 
-  3. we can also test the file by giving name which we specify in the test 
+  3. we can also test the file by giving test name which we specify in the test 
   npx playwright test -g "keyword" 
+  -g means Global it will check all the test file whether the keyword is present if it is then it will test 
   keyword - is the word which has to be present inside the test file 
   note - we dont have to specify the full name we just meniton a single word also it will run
+  
+  4. How to run the code using UI mode still before we used to run the test using terminal 
+  now we are going to see how to run the test in UI
 
+  Type in Terminal - npx playwright test --ui
+  now a playright winsow will open 
+
+  5. You can also do debug the test step by step
+  terminal: npx playwright test filename.spec.ts --debug  
 */
