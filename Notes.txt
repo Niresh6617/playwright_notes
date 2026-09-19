@@ -159,3 +159,9 @@ If we using await to fullfill the promise we must
 
 Playwright Architecture - 
 playwright works using Web Socket Protocol 
+
+Selinium Architecture
+Selinium uses W3C Protocol Internally runs HTTP Protocols
+HTTP works between Request and response 
+note: performance wise selinium is bit slower because for every statement or every method 
+it will open the connection and close the connection 

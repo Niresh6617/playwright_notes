@@ -115,8 +115,9 @@ test("verify page title",async ({page})=>{
   now we are going to see how to run the test in UI
 
   Type in Terminal - npx playwright test --ui
-  now a playright winsow will open 
+  now a playright window will open 
 
   5. You can also do debug the test step by step
-  terminal: npx playwright test filename.spec.ts --debug  
+  terminal: npx playwright test filename.spec.ts --debug 
+  It will going to debug test in every each browser 
 */
