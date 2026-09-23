@@ -1,0 +1,37 @@
+1.what is Software?
+* Software is a set of instruction or porgrams that is used to perform some specific task.
+For Example - Lets say an E-Commerce Application that allows the user to 
+    i - Search Products
+    ii - Add items to cart 
+    iii - place the orders 
+
+2.What is Software Testing?
+Software Testing is the process of verify and validating an application to insure it works accordingly to the
+requirements. It also helps us to 
+    i - identify the defects 
+    ii - and improve the quality 
+    iii - and relaiability of the software 
+
+3.Verifying - means checking whether the product being developed according to the specic requirements and standards.
+4.Validating - means checking the final product meets user needs and expectation. 
+5.Requirements - means what the software is expected to do.
+6.Bug/Defect - means flaws or error in an application.
+7.Quality - means checking How well the software meets its requirements and intended needs. 
+
+8.why software testing is important 
+The software testing is important because it helps 
+    i - to identify the defects 
+    ii - and verify the application meets its requirements
+    iii - and also improve the software quality 
+    iv - and also helps to reduce the risk of issues affecting user in production
+
+For Example - Lets take an E-Commerce application we used to test the Checkout and payment process so that 
+user can place the order and that payment and information are handled correctly 
+
+What are the roles and responsibilities of a Tester
+Tester is responsible 
+    i - understand the requirements
+    ii - preparing and Executing the test cases
+    iii - Identifying and reporting the defects 
+    iv - retesting the fixes 
+    v - and persorming regression testing to ensure the application is meets its expectations 

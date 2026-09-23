@@ -165,3 +165,12 @@ Selinium uses W3C Protocol Internally runs HTTP Protocols
 HTTP works between Request and response 
 note: performance wise selinium is bit slower because for every statement or every method 
 it will open the connection and close the connection 
+
+whereas in playwright it using Web Socket Protocol
+whenever u call a method (title,url..,)and run entire test it will open the connection only once And
+once all the commands are executed the connection will be closed 
+and playwright itself talks with directly to web browser so their is no need for browser specific drivers to
+communicate with web browser 
+
+For more to understand about the automation tool Architecture refer this website
+Link: https://www.testingmavens.com/blogs/architecture-breakdown-selenium-cypress-and
