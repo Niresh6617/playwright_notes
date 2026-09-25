@@ -121,3 +121,24 @@ test("verify page title",async ({page})=>{
   terminal: npx playwright test filename.spec.ts --debug 
   It will going to debug test in every each browser 
 */
+
+/**
+ * Day-2: Locators - Locating the web elements 
+  when u see website u can see the web elements like check box, inout buttons,read more button, images,links
+
+  To perform some action on the web element we need to 
+  1. Identify or locate the web element  
+  2. Perform some Action to that element 
+  3. After that we add assertion or validation the element  
+  
+  In Selinium WebDrivers they have Xpath and Css to locate the webelement 
+  whereas playwright itself having a built in locators they give priorities to their buit in locators 
+  priorities 
+  1.Buit-in Locators
+  2.Css Locators
+  3.Xpath Locators 
+
+  What is mean by Locators:
+  Locators means it is able to identify the web elements based on the attributes or properties 
+  
+*/
