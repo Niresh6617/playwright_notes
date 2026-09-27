@@ -123,7 +123,7 @@ test("verify page title",async ({page})=>{
 */
 
 /**
- * Day-2: Locators - Locating the web elements 
+ * Day-2: Locators - Locating the web elements  - refer the file name pwlocators.spec.ts
   when u see website u can see the web elements like check box, inout buttons,read more button, images,links
 
   To perform some action on the web element we need to 
@@ -140,5 +140,13 @@ test("verify page title",async ({page})=>{
 
   What is mean by Locators:
   Locators means it is able to identify the web elements based on the attributes or properties 
-  
+  or
+  Locators are the central peace of playwright's autowaiting and retry ability in a nutshell locators 
+  represent way to find the elements on the page at any moment.
+
+  and in selinium this auto-waiting and retry ability was not their 
+
+  Catagories of Locators
+  1.Buit-in locators(playwright recommended to use this locators)
+  By accesing the built in locators methods by using page fixtures 
 */
