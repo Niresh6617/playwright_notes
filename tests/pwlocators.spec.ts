@@ -4,6 +4,15 @@
     or
     DOM is a API Interface provided by the browser 
 */
+/**
+    1) page.getByAltText() to locate an element, usually image, by its text alternative.
+    2) page.getByText() to locate by text content. (Non interactive elements)
+    3) page.getByRole() to locate by explicit and implicit accessibility attributes.
+    4) page.getByLabel() to locate a form control by associated label's text.
+    5) page.getByPlaceholder() to locate an input by placeholder.
+    6) page.getByTitle() to locate an element by its title attribute.
+    7) page.getByTestId() to locate an element based on its data-testid attribute (other attributes can be configur
+ */
 import {test , expect, Locator} from "@playwright/test"
 
 // creating test 
@@ -13,14 +22,14 @@ test("verify playwright locators",async({page})=>{
         waitUntil: "commit"
     });
     //Locators - Built In Methods 
-    // page.getByAltText() - This identifies image or simillar elements based on the alt attribute
+    // 1. page.getByAltText() - This identifies image or simillar elements based on the alt attribute
     // when we can use this locators like when the element contains alt attribute such as image and area elements 
     
-    /* How to find the ALT text - go to website select the inpect element option and  u can see the HTML tags 
+    /* How to find the ALT text - go to website select the inspect element option and  u can see the HTML tags 
        which is called DOM in that find the element which contain alt attribute u can see most of img tag contians
        this alt attribute u can copy the text and paste in this method 
     */
-    const logo:Locator = page.getByAltText("Traversing the Tapestry img") //this method will return a Locator (web element )
+    const logo:Locator = page.getByAltText("Hangeul Day img") //this method will return a Locator (web element )
     // Hint - in playwright Locator is also a fixture like page, browser etc.,
     //after getting the element now we have to perform some operation so we have to store this into a variable 
     // in this Locator method it returns a Locator fixture so we have to specify the type of the variable 
@@ -40,10 +49,10 @@ test("verify playwright locators",async({page})=>{
     await expect(logo).toBeVisible(); //here why we using await because this assertion will return something like we performing some changes so we use await
     
     /**
-     * 2. page.getByText(); - this method is used to located simple text,it can match by substring exact string,
+     * 2) page.getByText(); - this method is used to locate simple text,it can match by substring, exact string,
      * located by visible text 
      * this can be located for non intercative elements like p, div, span,etc
-     * if u want to locate for interactive elements then u can go for role locators u can see it later 
+     * if u want to locate for interactive elements like input, button, a etc.  then u can go for role locators u can see it later 
     */
     let text:Locator =  page.getByText("E-learning")
     //above line we get the text using locator method now we are going to perform an operation using assertion
@@ -52,4 +61,15 @@ test("verify playwright locators",async({page})=>{
 
     //u can also directly do this locator method inside the assertion 
     // await expect(page.getByText("Welcome to our store")).toBeVisible()
+
+    /**
+     * Hint: we can run the test in headed and headless mode 
+       Headless = browser is running but you don't see it. - normal we can run in terminal
+       Headed = browser window is visible while the test runs. - npx playwright test file_name --headed 
+    */
+    await expect(page.getByText(/E\s+-\s+Learning/i)).toBeVisible();
+    /**
+     * 3) getByRole()- if yhr elements are Interactive then we go for getByRole
+        like Buttons, links, Chexkbox, radio buttons 
+    */
 })  
