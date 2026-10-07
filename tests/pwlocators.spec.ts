@@ -24,7 +24,7 @@ test("verify playwright locators",async({page})=>{
     //Locators - Built In Methods 
     // 1. page.getByAltText() - This identifies image or simillar elements based on the alt attribute
     // when we can use this locators like when the element contains alt attribute such as image and area elements 
-    
+    // getByAltText() - here AltText() refers the attribute of an element. 
     /* How to find the ALT text - go to website select the inspect element option and  u can see the HTML tags 
        which is called DOM in that find the element which contain alt attribute u can see most of img tag contians
        this alt attribute u can copy the text and paste in this method 
@@ -69,7 +69,24 @@ test("verify playwright locators",async({page})=>{
     */
     await expect(page.getByText(/E\s+-\s+Learning/i)).toBeVisible();
     /**
-     * 3) getByRole()- if yhr elements are Interactive then we go for getByRole
+     * 3) getByRole()- if your elements are Interactive then we go for getByRole
         like Buttons, links, Chexkbox, radio buttons 
+        - here Role() is not represent as an attribute of an element 
+        Implicit - means the tag name and role is exactly the same 
+
+        example:
+        HTML- 
+        <h3> Sign Up </h3>
+        <label>
+            <input type ="checkbox" /> Subscribe
+        </label>
+        <br>
+        <button> Submit </button>
+
+        Ts:
+        await expect(page.getByRole("heading", {name: "Sign up"})).toBeVisible(); - Explicit 
+        await page.getByRole("checkbox", {name: "subscribe"})).check(); - Explicit 
+        await page.getByRole("button",{name: /submit/i}).click(); - Implicit because the role and the tag name is same 
+
     */
 })  
