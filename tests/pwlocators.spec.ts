@@ -67,7 +67,7 @@ test("verify playwright locators",async({page})=>{
        Headless = browser is running but you don't see it. - normal we can run in terminal
        Headed = browser window is visible while the test runs. - npx playwright test file_name --headed 
     */
-    await expect(page.getByText(/E\s+-\s+Learning/i)).toBeVisible();
+    // await expect(page.getByText(/E\s+-\s+Learning/i)).toBeVisible(); // regular expression
     /**
      * 3) getByRole()- if your elements are Interactive then we go for getByRole
         like Buttons, links, Chexkbox, radio buttons 
@@ -88,5 +88,29 @@ test("verify playwright locators",async({page})=>{
         await page.getByRole("checkbox", {name: "subscribe"})).check(); - Explicit 
         await page.getByRole("button",{name: /submit/i}).click(); - Implicit because the role and the tag name is same 
 
+        Simple Defenition- when the locators needs to find an element using by their role 
+        for example
+        HTML:
+        <button>Login</button>
+        in TS
+        page.getByRole("button",{name:"Login"})
+                         ^               ^
+                name of the Role      accsible name 
+        means Find the element button whose accissible name is Login 
+
+        For more reference of knowing about the role go to playwrigt_notes_img_reference and check
     */
+   //getByRole
+   await page.getByRole("link",{name : 'About'}).click();
+   await expect(page.getByRole("heading",{name : 'About'})).toBeVisible(); // we can also use getByText()
+   /**
+     Code Explanation 
+     await page.getByRole("link",{name : 'About'}).click(); here why we use await because 
+     though the page.getByRole("link",{name : 'About'}) is not return promise but .click() action is 
+     return a promise thats why we use await
+     once i use a locator to find an element and also perform some action after that i use one assertion (validation)
+     that the text is available in that page or not 
+     await expect(page.getByRole("heading",{name : 'About'})).toBeVisible();
+   */
+
 })  
