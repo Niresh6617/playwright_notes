@@ -70,7 +70,7 @@ test("verify playwright locators",async({page})=>{
     // await expect(page.getByText(/E\s+-\s+Learning/i)).toBeVisible(); // regular expression
     /**
      * 3) getByRole()- if your elements are Interactive then we go for getByRole
-        like Buttons, links, Chexkbox, radio buttons 
+        like Buttons, links, Chexkbox, radio buttons, Input field 
         - here Role() is not represent as an attribute of an element 
         Implicit - means the tag name and role is exactly the same 
 
@@ -103,6 +103,7 @@ test("verify playwright locators",async({page})=>{
    //getByRole
    await page.getByRole("link",{name : 'About'}).click();
    await expect(page.getByRole("heading",{name : 'About'})).toBeVisible(); // we can also use getByText()
+   
    /**
      Code Explanation 
      await page.getByRole("link",{name : 'About'}).click(); here why we use await because 
@@ -112,5 +113,5 @@ test("verify playwright locators",async({page})=>{
      that the text is available in that page or not 
      await expect(page.getByRole("heading",{name : 'About'})).toBeVisible();
    */
-
+    //3. getByLable() - it is used to locate form controls by lable text 
 })  
