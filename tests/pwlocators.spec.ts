@@ -114,4 +114,17 @@ test("verify playwright locators",async({page})=>{
      await expect(page.getByRole("heading",{name : 'About'})).toBeVisible();
    */
     //3. getByLable() - it is used to locate form controls by lable text 
+    // it is same like getbyPlaceholder() but instead of writing placeholder name we can use lable name 
+
+    //4. getByPlaceholder() - it is used to locate an input by place holder 
+    //best for having this locator with input without a lable but having a placeholder 
+    await page.getByRole("link",{name : 'Contact'}).first().click()
+    await page.getByPlaceholder("Name").fill("Niresh");
+    await page.getByPlaceholder("E-mail").fill("test@gmail.com");
+    await page.getByPlaceholder("Mobile Number").fill("7010838339");
+
+    //getByTitle()- this locator is used to find the element has having attribute as title 
+    //when to use - when ur element has a meaningful title attribute. 
+
+
 })  
