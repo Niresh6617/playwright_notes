@@ -126,5 +126,9 @@ test("verify playwright locators",async({page})=>{
     //getByTitle()- this locator is used to find the element has having attribute as title 
     //when to use - when ur element has a meaningful title attribute. 
 
-
+    await page.goto("https://testautomationpractice.blogspot.com/p/playwrightpractice.html")
+    await expect(page.getByTitle("Home page link")).toHaveText("Home")
+    let linka : Locator = page.getByTitle("HyperText Markup Language");
+    await expect(linka).toHaveText("HTML");
+    await expect(page.getByTitle("Tooltip text")).toHaveText("This text has a tooltip")
 })  
