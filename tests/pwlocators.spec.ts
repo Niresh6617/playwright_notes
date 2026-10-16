@@ -95,8 +95,8 @@ test("verify playwright locators",async({page})=>{
         in TS
         page.getByRole("button",{name:"Login"})
                          ^               ^
-                name of the Role      accsible name 
-        means Find the element button whose accissible name is Login 
+                name of the Role      accesible name 
+        means Find the element button whose accesible name is Login 
 
         For more reference of knowing about the role go to playwrigt_notes_img_reference and check
     */
@@ -118,10 +118,10 @@ test("verify playwright locators",async({page})=>{
 
     //4. getByPlaceholder() - it is used to locate an input by place holder 
     //best for having this locator with input without a lable but having a placeholder 
-    await page.getByRole("link",{name : 'Contact'}).first().click()
-    await page.getByPlaceholder("Name").fill("Niresh");
-    await page.getByPlaceholder("E-mail").fill("test@gmail.com");
-    await page.getByPlaceholder("Mobile Number").fill("7010838339");
+    // await page.getByRole("link",{name : 'Contact'}).first().click()
+    // await page.getByPlaceholder("Name").fill("Niresh");
+    // await page.getByPlaceholder("E-mail").fill("test@gmail.com");
+    // await page.getByPlaceholder("Mobile Number").fill("7010838339");
 
     //getByTitle()- this locator is used to find the element has having attribute as title 
     //when to use - when ur element has a meaningful title attribute. 
@@ -131,4 +131,7 @@ test("verify playwright locators",async({page})=>{
     let linka : Locator = page.getByTitle("HyperText Markup Language");
     await expect(linka).toHaveText("HTML");
     await expect(page.getByTitle("Tooltip text")).toHaveText("This text has a tooltip")
+
+    await expect(page.getByTestId("profile-name")).toHaveText("John Doe")
+    await expect(page.getByTestId("profile-email")).toHaveText("john.doe@example.com")
 })  
