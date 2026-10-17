@@ -18,6 +18,12 @@ test("verifying the page using locators",async({page})=>{
     //getByLable()
     const lableText : Locator = page.getByLabel("Email Address:");
     await expect(lableText).toBeVisible();
-    await expect(lableText);
+    await expect(lableText).toBeEnabled();
+    await expect(lableText).toBeEditable(); 
+    
+    await lableText.fill("Niresh");
+    await expect(lableText).toHaveValue("Niresh");
 
+
+ 
 })
