@@ -23,7 +23,7 @@
     ii) Relative Xpath (partial Xpath) - it is much easier to find the element because it will directly 
     jumps to the element using attribute without starting from the root.
     It Sarts with // means it will search element from anywhere in the document.
-    Example: //*[@ name = "search"] 
+    Example: //*[@ name = "search"] or // tag_name[@ name = "search"]
     hint: above example looks like html attributes but the slight changes is we have to start with //
     and * represents Regular Expression(Regex) if u dont know the tag name u can mention the * 
     after that u have to use @ symbol before the attribute name and followed by attribute value.
@@ -32,4 +32,18 @@
     root element tags if their is any changes in the tag then it will give error so use relative path over 
     absolute 
 
+    Ho to use xpath - first we have to install a chrom extension name SelectorsHub after installing that 
+    click inspect option ctrl + Shift + i and then DOM elements will appear and then we can search tag element 
+    using ctrl + f or simpley place the cursor on everywhere u want to select after that select SelectorsHub
+    option in right side of the style section in that u can search the xpath using absolute xpath and 
+    relative xpath 
+    
+    hint - we can also search multiple attributes in an same element 
+    //tag_name (or) *[@ attr_name = "value"][@ attr_name = "value"]...
+
+    we can use opertor in xpath also
+    like that we can compare the two attribute using operatos 
+    eg: tag_name[@ type = "submit" and @value ="search"]
+    if both the attribute returns true   then only the element will be shown 
+    
 */
