@@ -35,3 +35,16 @@ Tester is responsible
     iii - Identifying and reporting the defects 
     iv - retesting the fixes 
     v - and persorming regression testing to ensure the application is meets its expectations 
+
+TypeScript - is a superset of JavaScript
+
+npm - Node Package Manager
+npx - Node Package Executor 
+
+Playwright is a Module so we need to import the test and expect function 
+
+a module is a distinct, reusable block of code encapsulated in its own file. 
+You can think of a module as a code library 
+                                (or) 
+a single Lego brick that performs a specific function and can be easily 
+plugged into other parts of your application.

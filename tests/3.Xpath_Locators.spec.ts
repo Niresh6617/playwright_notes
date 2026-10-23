@@ -12,6 +12,9 @@
     For Interviewer ask - Xpath is a XML Path Document It is used to locate  element in an webpage by 
     navigating through  HTML document structure.    
 */
+
+import test, { expect, Locator } from "@playwright/test";
+
 /* 
     2 Tyepes of Xpath we have  - Absolute Xpath, Relative Xpath
     i) Absolute Xpath (Full Xpath) - It will navigate through each and every node from the root node 
@@ -45,5 +48,13 @@
     like that we can compare the two attribute using operatos 
     eg: tag_name[@ type = "submit" and @value ="search"]
     if both the attribute returns true   then only the element will be shown 
-    
+
 */
+test("verify xpath locators" , async ({page})=>{
+    await page.goto("https://demowebshop.tricentis.com/")
+
+    // Absolute Xpath
+    let Absolutelogo :Locator = page.locator("/html[1]/body[1]/div[4]/div[1]/div[1]/div[1]/a[1]/img[1]");
+    await expect(Absolutelogo).toBeVisible();
+
+})
