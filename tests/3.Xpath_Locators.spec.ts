@@ -54,7 +54,30 @@ test("verify xpath locators" , async ({page})=>{
     await page.goto("https://demowebshop.tricentis.com/")
 
     // Absolute Xpath
-    let Absolutelogo :Locator = page.locator("/html[1]/body[1]/div[4]/div[1]/div[1]/div[1]/a[1]/img[1]");
+    let Absolutelogo :Locator = page.locator("//html[1]/body[1]/div[4]/div[1]/div[1]/div[1]/a[1]/img[1]");
     await expect(Absolutelogo).toBeVisible();
+
+    /* hint we can also represent xpath as 
+        page.locator("xpath=/html[1]/body[1]/div[4]/div[1]/div[1]/div[1]/a[1]/img[1]");
+       because in general if we declare with single / the playwright will take it as css locator so 
+       in prefix we have to emntion that this is xpath locator 
+    */
+
+    // Relative x-path 
+    let Relativelogo : Locator = page.locator("//img[@alt='Tricentis Demo Web Shop']");
+    await expect(Relativelogo).toBeVisible();
+
+    // Xpath functions 
+    /* Contains() - is used to matches the element that contains substring within an attribute 
+        for example if u need to find a group of element which contains the same substring in an attribute then u can use 
+        this contains function 
+        also what if u will find a many number of sub string but u want to concentrate for the particular set of 
+        element then u can go like 
+        //parent_tag/child_tag[contains(@attr_name , 'value or sub string')]
+
+    */
+
+    //I want to target computer type elements  
+    await expect(page.locator(""))
 
 })
