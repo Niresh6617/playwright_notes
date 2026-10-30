@@ -6,7 +6,7 @@
 */ 
 /* 
     xpath full form is XML path Language 
-    Xpath is used to Navigate  elements and attribute in XML Documents
+    Xpath is used to Navigate  elements and attribute in XML Documents.
     or simply Xpath gives the direction to locate the elements in the HTML Document or webpage 
     
     For Interviewer ask - Xpath is a XML Path Document It is used to locate  element in an webpage by 
@@ -16,7 +16,7 @@
 import test, { expect, Locator } from "@playwright/test";
 
 /* 
-    2 Tyepes of Xpath we have  - Absolute Xpath, Relative Xpath
+    2 Types of Xpath we have  - Absolute Xpath, Relative Xpath
     i) Absolute Xpath (Full Xpath) - It will navigate through each and every node from the root node 
     or 
     Absolute xpath is a Full path is used to find the element which navigates from root of the document 
@@ -78,6 +78,39 @@ test("verify xpath locators" , async ({page})=>{
     */
 
     //I want to target computer type elements  
-    await expect(page.locator(""))
+    let products: Locator =  page.locator("//h2/a[contains(@href,'computer')]")
+    // console.log("The products is");
+    let productsCount: number = await products.count();
+    console.log("the count is ",productsCount);//4
 
+    // also right now we use one assertion 
+    expect(productsCount).toBeGreaterThan(0) 
+
+    
+    /* 
+        ok right now i know that their is totally 4 products with name having computer in a particular section
+        so for now i need to display names of all the productss 
+    */
+
+    // console.log(await products.textContent()); // it throws strict mode violation errror  
+
+    // textContent is a method is used to extract the text from the selected locator element
+    /* 
+        why it throws strict mode violation error because while the selected locator elements having the same 
+        values or input in multiple times 
+        for example if there is a text lets say "e-learning" is present many times while we use a locator to find the element so
+        we take getByText("e-learning") it thows me an error like stict violstion mode so instead we go for getByText()
+        we can go with getByrole(name of the role , name: "accsible_name")
+    */ 
+    // or simply if you perform a single action on multiple element then u will get the strict mode violation error     
+    
+    
+    // then how will i get the text content of 1 product or 2,3,4 till nth product then follow below 
+    console.log("The first computer product text is: " ,await products.first().textContent());
+    console.log("The last computer product text is: " ,await products.last().textContent());
+    console.log("The nth computer product text is " ,await products.nth(0).textContent());
+
+    // what if i want to display all the product content at once then we go for allTextContent() method it gives a string array
+
+    // console.log(products.allTextContents());
 })
